@@ -1,4 +1,6 @@
 <?php
+	require_once 'connection.php';
+
 	/*
 	 *	fetch_all - Armazena todas as linhas do banco.
 	 *		MYSQLI_NUM
@@ -10,15 +12,7 @@
 	 *		MYSQLI_BOTH
 	 *	fetch_row - Armazena somente a última linha do banco
 	 *	fetch_object - Armazena somente a primeira linha do banco
-	 */
-
-	$server = 'localhost';
-	$user = 'root';
-	$password = '';
-	$database = 'php_mysql_school_of_net';
-
-	// Conexão com o banco de dados
-	$mysqli = new mysqli($server, $user, $password, $database);
+	 */	
 
 	// Consulta dos dados
 	$sql = 'SELECT * FROM usuario ORDER BY nome';
