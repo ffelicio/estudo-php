@@ -47,9 +47,16 @@
 			$this->db = $mysqli;
 		}
 
-		public function list()
+		public function list($order = null)
 		{
+			$sql = ' SELECT * FROM usuario ';
 
+			if( $order ) {
+				$sql .= ' ORDER BY ' . $order;
+			}
+
+			$query = $this->db->query($sql);
+			return $query->fetch_all(MYSQLI_ASSOC);
 		}
 
 		public function insert()
