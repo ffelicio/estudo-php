@@ -81,6 +81,11 @@
 
 		public function delete()
 		{
-
+			$stmt = $this->db->stmt_init();
+			$stmt->prepare("DELETE FROM usuario WHERE id = ?");
+			$stmt->bind_param("i", $this->id);
+			$deleted = $stmt->execute();
+			$stmt->close();
+			return $deleted;
 		}
 	}
