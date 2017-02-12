@@ -65,8 +65,10 @@
 			$stmt->prepare("INSERT INTO usuario(nome, email) VALUES(?,?)");
 			$stmt->bind_param('ss', $this->nome, $this->email);
 			$stmt->execute();
+			$id = $stmt->insert_id;
+			$stmt->close();
 
-			return $stmt->insert_id;
+			return $id;
 		}
 
 		public function update()
@@ -87,5 +89,17 @@
 			$deleted = $stmt->execute();
 			$stmt->close();
 			return $deleted;
+		}
+
+		public function findById()
+		{
+			$stmt = $this->db->stmt_init();
+			$stmt->prepare('SELECT * FROM usuario WHERE id = ?');
+			$stmt->bind_param("i", $this->id);
+			$stmt->execute();
+			$stmt->bind_result($id, $nome, $email);
+			$stmt->fetch();
+			$stmt->close();
+			return ['id' => $id, 'nome' => $nome, 'email' => $email];
 		}
 	}
