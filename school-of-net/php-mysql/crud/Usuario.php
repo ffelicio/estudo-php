@@ -13,7 +13,7 @@
 
 	    public function setId($id)
 	    {
-	        $this->id = $id;
+	        $this->id = (int)$id;
 
 	        return $this;
 	    }
@@ -71,7 +71,12 @@
 
 		public function update()
 		{
-
+			$stmt = $this->db->stmt_init();
+			$stmt->prepare("UPDATE usuario SET nome = ?, email = ? WHERE id = ?");
+			$stmt->bind_param("ssi", $this->nome, $this->email, $this->id);
+			$updated = $stmt->execute();
+			$stmt->close();
+			return $updated;
 		}
 
 		public function delete()
