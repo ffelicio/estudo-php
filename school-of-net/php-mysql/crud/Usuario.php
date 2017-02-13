@@ -65,10 +65,8 @@
 			$stmt->prepare("INSERT INTO usuario(nome, email) VALUES(?,?)");
 			$stmt->bind_param('ss', $this->nome, $this->email);
 			$stmt->execute();
-			$id = $stmt->insert_id;
-			$stmt->close();
 
-			return $id;
+			return $stmt->insert_id;
 		}
 
 		public function update()
