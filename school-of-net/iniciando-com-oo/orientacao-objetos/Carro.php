@@ -10,7 +10,8 @@
 
 		/*
 		 * Assinatura de métodos
-		 * Paramêtros nos métodos. Da forma que está caso algum valor não seja passado em sua utilização, será mostrado um erro.
+		 * Paramêtros nos métodos.
+		 * Da forma que está, caso algum valor não seja passado em sua utilização, será mostrado um erro.
 		 */
 		public function getMotorArgumentoObrigatorio($tipo)
 		{
@@ -20,9 +21,9 @@
 		/*
 		 * Assinatura de métodos
 		 * Paramêtros nos métodos.
-		 * Da forma que está caso algum valor não seja passado em sua utilização, não será mostrado erro,
-		 * devido ao valor já estar sendo passado.
-		 * Caso seja passado, o valor será substituído
+		 * Da forma que está, caso algum valor não seja passado em sua utilização, não será mostrado erro,
+		 * devido ao valor já estar sendo passado no argumento.
+		 * Caso seja passado, o valor será substituído.
 		 */
 		public function getMotorArgumentoNaoObrigatorio($tipo = 'cavalos')
 		{
