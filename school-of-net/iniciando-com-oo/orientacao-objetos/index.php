@@ -23,3 +23,11 @@
 	var_dump($oMustang);
 	echo '<hr>';
 	echo '</pre>';
+
+	##########################
+
+	// Mostrando as informações no método.
+
+	echo 'Utilização de métodos<br>';
+	echo 'Ferrari = ', $oFerrari->getMotor(), '<br>';
+	echo 'Mustang = ', $oMustang->getMotor(), '<hr>';
