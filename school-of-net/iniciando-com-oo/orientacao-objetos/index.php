@@ -7,6 +7,7 @@
 	 */
 	$oFerrari = new Carro();
 	$oMustang = new Carro();
+	$oCamaro = new Carro();
 
 	$oFerrari->marca = 'Ferrari';
 	$oFerrari->cor = 'Vermelha';
@@ -15,6 +16,10 @@
 	$oMustang->marca = 'Ford';
 	$oMustang->cor = 'Preto';
 	$oMustang->motor = 280;
+
+	$oCamaro->marca = 'Chevrolet';
+	$oCamaro->cor = 'Amarelo / Preto';
+	$oCamaro->motor = 250;
 
 	echo '<pre>';
 	echo '<hr>';
@@ -28,6 +33,9 @@
 
 	// Mostrando as informações no método.
 
-	echo 'Utilização de métodos<br>';
-	echo 'Ferrari = ', $oFerrari->getMotor(), '<br>';
-	echo 'Mustang = ', $oMustang->getMotor(), '<hr>';
+	echo 'Utilização de métodos (Argumento obrigatório)<br>';
+	echo 'Ferrari = ', $oFerrari->getMotorArgumentoObrigatorio('cavalos'), '<br>';
+	echo 'Mustang = ', $oMustang->getMotorArgumentoObrigatorio('cavalos'), '<hr>';
+
+	echo 'Utilização de métodos (Argumento não obrigatório)<br>';
+	echo 'Camaro = ', $oCamaro->getMotorArgumentoNaoObrigatorio('cv'), '<hr>';
